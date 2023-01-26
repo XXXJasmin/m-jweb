@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{%block title%}Fotografie{%endblock%}
+
+{% block obsah %}
+
+<h1>Fotografie experimentů</h1>
+
+<p></p>
+<img src="{{ url_for('static', filename='bobo.jpg') }}" alt="">
+<img src="{{ url_for('static', filename='th.jpeg') }}" alt="">
+
+{% endblock obsah %}
