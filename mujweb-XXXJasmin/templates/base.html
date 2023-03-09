@@ -16,34 +16,61 @@
 
 <body>
 <a href="https://github.com/spseol/flask-start-onefile/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
-
+<p class="login">
+{%if "uživatel" in session%}
+  Jsi přihlášen jako <strong>{{session["uživatel"]}}</strong>!
+{%else%}
+  Hrůza!!! Nejsi přihlášen, <a href="{{url_for('login') }}">Přihlas se!</a>
+{%endif%}
+<div>
+</p>
 
   <nav>
   <ul>
     <li><a href="{{ url_for('main') }}">Hlavní stránka</a></li>
+    <li><a href="{{ url_for('prispevky') }}">Příspěvky</a></li>
     <li><a href="{{ url_for('experimenty') }}">Experimenty</a></li>
     <li><a href="{{ url_for('fotografie') }}">Fotografie</a></li>
+    <li><a href="{{ url_for('login') }}">Přihlášení</a></li>
+    <li><a href="{{ url_for('registrace') }}">Registrace</a></li>
   </ul></nav>
 
 
 {% block obsah %}
 
-
-<h1>Albert Bandura</h1>
-
+<h1>Významné osobnosti ze světa psychologie</h1>
+<h2>Albert Bandura</h2>
 <p>
 He was a Canadian-American psychologist who was the David Starr Jordan Professor in Psychology at Stanford University.
 Bandura was responsible for contributions to the field of education and to several fields of psychology, including social cognitive theory, therapy, and personality psychology,
  and was also of influence in the transition between behaviorism and cognitive psychology.
 </p>
-
-<h2>Jeho fotografie 🠗</h2>
+<h3>Jeho fotografie 🠗</h3>
 <img src="{{ url_for('static', filename='Albert_Bandura_Psychologist.jpg') }}" alt="">
 
+<h2>Stanley Milgram</h2>
+<p>Stanley Milgram was an American social psychologist,
+best known for his controversial experiments on obedience conducted in the 1960s during his professorship at Yale.
+Milgram was influenced by the events of the Holocaust, especially the trial of Adolf Eichmann, in developing the experiment. 
+After earning a PhD in social psychology from Harvard University, he taught at Yale, Harvard, and then for most of his career as a professor at the City University of New York Graduate Center, until his death in 1984.</p>
+<h3>Jeho fotografie 🠗</h3>
+<img src="{{ url_for('static', filename='Stanley_Milgram_Profile.jpg') }}" alt="">
 
+<h2>Solomon Asch</h2>
+<p>Solomon Eliot Asch (September 14, 1907 – February 20, 1996) was a Polish-American Gestalt psychologist and pioneer in social psychology. 
+He created seminal pieces of work in impression formation, prestige suggestion, conformity, and many other topics. His work follows a common theme of Gestalt psychology that the whole is not only greater than the sum of its parts, but the nature of the whole fundamentally alters the parts.
+ Asch stated: "Most social acts have to be understood in their setting, and lose meaning if isolated. 
+No error in thinking about social facts is more serious than the failure to see their place and function"</p>
+<h3>Jeho fotografie 🠗</h3>
+<img src="{{ url_for('static', filename='Solomon_Asch.jpg') }}" alt="">
 
+<h2>Jean Piaget</h2>
+<p>Jean Piaget's theory of cognitive development had a profound influence on psychology, especially the understanding of children's intellectual growth. His research contributed to the growth of developmental psychology, cognitive psychology, genetic epistemology, and education reform.
 
-{% endblock obsah %}
+Albert Einstein once described Piaget's observations on children's intellectual growth and thought processes as a discovery "so simple only a genius could have thought of it."</p>
+<h3>Jeho fotografie 🠗</h3>
+<img src="{{ url_for('static', filename='Jean_Piaget.jpg') }}" alt="">
+
 
 <footer>
 {#{% filter markdown %}#}
@@ -53,6 +80,9 @@ Pro více informací:
 
 {#{% endfilter %}#}
 </footer>
+
+{% endblock obsah %}
+
 
 
 

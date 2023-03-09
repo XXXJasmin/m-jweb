@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{%block title%}Přihlášení{%endblock%}
+
+{% block obsah %}
+
+<h1>Přihlášení</h1>
+<p>Zde se můžeš přihlásit.</p>
+<form action="" method="post">
+jméno:<br>
+<input type="text" name="jmeno"><br>
+heslo: <br>
+<input type="password" name="heslo">
+<br>
+<input type="submit" value="Přihlas mě!">
+
+</form>
+<form method="get" action="{{url_for('logout')}}"><p>Zde se můžeš odhlásit.</p>
+<input type="submit" value="Odhlas mě!"></form>
+{% endblock obsah %}

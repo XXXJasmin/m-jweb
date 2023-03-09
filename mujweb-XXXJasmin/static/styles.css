@@ -1,5 +1,5 @@
 body {
-  background-color: #eeeeee;
+  background-color: #7dad60;
   padding-left: 1em;
   padding-right: 1em;
   margin-left: 90px;
@@ -61,5 +61,8 @@ footer {
     background-color: lightblue;
 }
 
-
+table  {
+  border-style: double;
+  background-color: rgb(9, 121, 33);
+}
 /*# sourceMappingURL=styles.css.map */

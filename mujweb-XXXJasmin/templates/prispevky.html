@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{%block title%}Příspěvky{%endblock%}
+
+{% block obsah %}
+
+<h1>Sdílej své názory, nápady a zajímavosti!</h1>
+<table>
+
+{% for text,user in tabulka  %}
+<tr>
+    <th>Příspěvky</th>
+    <th>Uživatel</th>
+    
+    <td>{{text}}</td>
+    <td>{{user}}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+<form method="post">
+<textarea name="text" cols="50" rows="20"></textarea>
+<input type="submit" value="Odeslat">
+</form>
+
+<p></p>
+
+
+{% endblock obsah %}
